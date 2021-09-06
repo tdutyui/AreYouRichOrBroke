@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/search"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "gifs.json",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
