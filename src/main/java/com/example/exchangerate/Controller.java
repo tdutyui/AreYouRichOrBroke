@@ -50,13 +50,13 @@ public class Controller {
                 gifToBytes(getLink(broke));
     }
 
-    public Double ratesForDay(String date, String code) {
+    private Double ratesForDay(String date, String code) {
         Rate rate = client.getLatest(exchangeApi, date);
         HashMap<String, Double> currencies = rate.getRates();
         return currencies.get(code.toUpperCase());
     }
 
-    public String getLink(String search) {
+    private String getLink(String search) {
         Random random = new Random();
         Gif gif = giphy.getGifs(giphyApi, search);
         List<Datum> data = gif.getData();
@@ -64,7 +64,7 @@ public class Controller {
         return before + id + after;
     }
 
-    public byte[] gifToBytes(String link) throws IOException {
+    private byte[] gifToBytes(String link) throws IOException {
         InputStream input = new URL(link).openStream();
         return input.readAllBytes();
     }
